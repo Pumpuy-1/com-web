@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const createCategory = async (token, form) => {
     // code body
-    return axios.post(`https://com-backend-two.vercel.app/category`, form, {
+    return axios.post(`${import.meta.env.VITE_API_URL}/category`, form, {
         headers: {
             Authorization: `Bearer ${token}`
         }
@@ -12,12 +12,12 @@ export const createCategory = async (token, form) => {
 
 export const listCategory = async () => {
     // code body
-    return axios.get(`https://com-backend-two.vercel.app/category`)
+    return axios.get(`${import.meta.env.VITE_API_URL}/category`)
 }
 
 export const removeCategory = async (token, id) => {
     // code body
-    return axios.delete(`https://com-backend-two.vercel.app/category/`+id, {
+    return axios.delete(`${import.meta.env.VITE_API_URL}/category/`+id, {
         headers: {
             Authorization: `Bearer ${token}`
         }

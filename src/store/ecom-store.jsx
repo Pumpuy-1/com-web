@@ -49,7 +49,7 @@ const ecomStore = (set, get) => ({
     }, 0);
   },
   actionLogin: async (form) => {
-    const res = await axios.post(`https://com-backend-two.vercel.app/login`, form);
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, form);
     set({
       user: res.data.payload,
       token: res.data.token,
